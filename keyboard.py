@@ -1,11 +1,16 @@
 from customtkinter import *
 from PIL import ImageTk,Image
 
-
 root = CTk()
 root.title('onscreen keyboard')
 root.geometry('800x480')
-root.configure(background="blue")
+
+def quit_app():
+    root.destroy()
+
+quit_Btn = CTkButton(root, text="Exit app", command=quit_app)
+quit_Btn.pack()
+
 
 MainFrame = CTkFrame(root, height= 160, fg_color="black", border_width=0)
 Row1Frame = CTkFrame(MainFrame, width=800, height=40, fg_color="black", border_width=0)
@@ -59,7 +64,7 @@ KEYS = [
     [("A", 0),("S", 1),("D", 2),("F", 3),("G", 4),("H", 5),("J", 6),("K", 7),("L", 8)],
     [("Z", 0),("X", 1),("C", 2),("V", 3),("B", 4),("N", 5),("M", 6), ("CLEAR", 7), ("DONE", 8)]
 ]
-
+root.wm_attributes('-fullscreen', 'True')
 root.mainloop()
 
 
