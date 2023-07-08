@@ -26,8 +26,13 @@ display.pack()
 
 def press(letter):
     global exp
-    exp = exp + str(letter)
-    input.set(exp)
+    if str(letter) == "DONE":
+        input.set("")
+        Label(root, text=exp).pack()
+        exp = ""
+    else:
+        exp = exp + str(letter)
+        input.set(exp)
 
 # top row
 KEYS = [
